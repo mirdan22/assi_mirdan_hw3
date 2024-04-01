@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(89.7deg, rgb(40, 30, 30) 2.8%, rgb(36, 45, 71) 97.8%);
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+}
+
+.grid-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.col-span-full {
+    background: linear-gradient(89.7deg, rgb(235, 91, 91) 2.8%, rgb(197, 54, 54) 97.8%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.col-span-full h2 {
+    color: rgb(203, 216, 248);
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.col-span-full h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.col-span-full p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#music-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 14px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+#music-list li {
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+#music-list li:hover {
+    background: linear-gradient(89.7deg, rgb(235, 91, 91) 2.8%, rgb(159, 189, 223) 97.8%);
+}
+
+a {
+    color: rgb(203, 216, 248);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tablets and Desktops */
+@media (min-width: 768px) {
+    .col-span-full {
+        width: 70%;
+    }
+
+    .col-span-full h2 {
+        font-size: 32px;
+    }
+
+    .col-span-full h3 {
+        font-size: 24px;
+    }
+
+    .col-span-full p {
+        font-size: 18px;
+    }
+
+    #music-list li {
+        margin-bottom: 30px;
+    }
+}
