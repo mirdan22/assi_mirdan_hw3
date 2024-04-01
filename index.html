@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <title>The Weeknd Top music</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+  <link href="css/grid.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <script async src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+  <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</head>
+
+<body>
+  <div class="grid-con" id="app">
+    <div class="col-span-full m-col-start-1 m-col-end-13">
+      <h2>The Weeknd Top music</h2>
+      <p>Browse through The Weeknd's top music</p>
+      <p>Click on any song to find out more interesting details about the song. </p>
+      <ul id="music-list">
+        <li v-for="music in musicsData">
+          <h3>Music Title: <a href="#" @click="getMusic(music)">{{ music.title }}</a></h3>
+          <h4>Released Date: {{ music.released_date }}</h4>
+        </li>
+      </ul>
+    </div>
+    <div class="col-span-full m-col-start-1 m-col-end-13" id="musicInfoCon">
+      <div v-if="error">{{ error }}</div>
+      <div v-if="selectedMusic" id="music">
+        <h3>{{ selectedMusic.title }}</h3>
+        <p>Released Date: {{ selectedMusic.released_date }}</p>
+        <p>Featured Artists: {{ selectedMusic.featured_artists.join(', ') }}</p>
+        <p>Number of Listeners: {{ selectedMusic.listeners }}</p>
+        <p>Album: {{ selectedMusic.album }}</p>
+        <p>Awards: {{ selectedMusic.awards.join(', ') }}</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
